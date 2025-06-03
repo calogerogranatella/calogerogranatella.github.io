@@ -1,0 +1,121 @@
+body { font-family: 'Inter', sans-serif; }
+.section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.section.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.nav-link.active {
+    background-color: #4A5568;
+    color: #E2E8F0;
+}
+.timeline-item.active .timeline-dot {
+    background-color: #38B2AC;
+    transform: translateY(-50%) scale(1.25);
+}
+.timeline-item.active .timeline-content h3 {
+    color: #38B2AC;
+}
+.chart-container {
+    position: relative; 
+    width: 100%; 
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    height: 300px;
+    max-height: 400px;
+}
+@media (min-width: 768px) {
+    .chart-container { height: 350px; }
+}
+.skill-card-description {
+    max-height: 4rem;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
+.skill-card-expanded .skill-card-description {
+    max-height: 10rem;
+}
+.skill-card-additional-text {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 1s ease-out, height 1s ease-out;
+}
+.skill-card-expanded .skill-card-additional-text {
+    opacity: 1;
+    height: auto;
+    margin-top: 0.5rem;
+}
+.interest-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    cursor: pointer;
+    min-height: 80px;
+}
+.timeline-dot {
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: #gray-600;
+    border-radius: 50%;
+    border: 4px solid #1A202C;
+    transition: all 0.3s;
+}
+
+/* Mobile Navigation Overlay */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Width of the mobile nav */
+    background-color: #1A202C;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left align items */
+    padding-left: 1rem; /* Add some left padding */
+}
+.mobile-nav.active {
+    transform: translateX(0);
+}
+.nav-link-mobile {
+    text-align: left; /* Ensure text is left-aligned within the link */
+    padding-left: 1rem; /* Add padding to align text with icons */
+    width: 100%; /* Ensure links take full width */
+}
+.nav-link-mobile span {
+    margin-right: 0.5rem; /* Space between icon and text */
+}
