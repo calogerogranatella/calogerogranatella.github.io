@@ -156,7 +156,7 @@
                 <span class="text-2xl">🎓</span>
             </a>
             <a href="#contact" class="nav-link p-3 rounded-lg text-gray-400 hover:bg-gray-700 hover:text-white transition-colors duration-200" title="Contact">
-                <span class="text-2xl">✉️</span>
+                <span class="text-2xl">🔗</span>
             </a>
         </nav>
 
@@ -183,7 +183,7 @@
                 <span class="text-2xl">🎓</span> Education
             </a>
             <a href="#contact" class="nav-link-mobile p-3 rounded-lg text-gray-400 hover:bg-gray-700 hover:text-white transition-colors duration-200 w-full" title="Contact">
-                <span class="text-2xl">✉️</span> Contact
+                <span class="text-2xl">🔗</span> Contact
             </a>
         </nav>
         <div id="mobile-nav-backdrop" class="mobile-nav-overlay"></div>
@@ -608,39 +608,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderEducation();
     renderCertifications();
     navigateTo(window.location.hash || '#home');
-
-    // Copy Email Functionality
-    const copyEmailBtn = document.getElementById('copyEmailBtn');
-    if (copyEmailBtn) {
-        copyEmailBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const email = 'calogero.granatella@gmail.com';
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            showCopyConfirmation();
-        });
-    }
-
-    function showCopyConfirmation() {
-        let popup = document.getElementById('copyConfirmation');
-        if (!popup) {
-            popup = document.createElement('div');
-            popup.id = 'copyConfirmation';
-            popup.className = 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 z-50';
-            popup.textContent = 'Email copied to clipboard!';
-            document.body.appendChild(popup);
-        }
-        popup.classList.remove('opacity-0');
-        popup.classList.add('opacity-100');
-        setTimeout(() => {
-            popup.classList.remove('opacity-100');
-            popup.classList.add('opacity-0');
-        }, 1000);
-    }
 });
 </script>
 </body>
