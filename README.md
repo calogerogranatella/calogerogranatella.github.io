@@ -17,6 +17,7 @@ Welcome to my interactive online CV! This project is designed to showcase my pro
 * **JavaScript (ES6+):** Powers all interactive elements, data rendering, and dynamic content loading.
 * **Chart.js:** Utilized for creating the interactive language proficiency chart.
 * **Google Fonts:** Enhances typography for a polished look.
+* **Google Gemini:** Everything you see has been built using Google Gemini Canvas.
 
 ## 🔗 Live Demo
 
